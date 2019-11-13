@@ -39,6 +39,42 @@ module.exports = {
     proxy: {
       // change xxx-api/login => mock/login
       // detail: https://cli.vuejs.org/config/#devserver-proxy
+      [process.env.VUE_APP_BASE_API + '/mock']: {
+        target: 'https://yapi.cai-inc.com',
+        changeOrigin: true,
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_BASE_API + '/mock']: '/mock/1117'
+        }
+      },
+      [process.env.VUE_APP_BASE_API + '/cmdb/online']: {
+        target: 'http://cmdb.cai-inc.com',
+        changeOrigin: true,
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_BASE_API + '/cmdb/online']: ''
+        }
+      },
+      [process.env.VUE_APP_BASE_API + '/cmdb/shanghai']: {
+        target: 'http://zpaas.cai-inc.com',
+        changeOrigin: true,
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_BASE_API + '/cmdb/shanghai']: '/api/cmdb'
+        }
+      },
+      [process.env.VUE_APP_BASE_API + '/zcy/sso-login']: {
+        target: 'https://sso.cai-inc.com',
+        changeOrigin: true,
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_BASE_API + '/zcy/sso-login']: ''
+        }
+      },
+      [process.env.VUE_APP_BASE_API + '/zcy/sso-getuser']: {
+        target: `https://sso.cai-inc.com/getuser`,
+        changeOrigin: true,
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_BASE_API + '/zcy/sso-getuser']: ''
+        }
+      },
+
       [process.env.VUE_APP_BASE_API]: {
         target: `http://127.0.0.1:${port}/mock`,
         changeOrigin: true,
@@ -47,6 +83,7 @@ module.exports = {
         }
       }
     },
+
     after: require('./mock/mock-server.js')
   },
   configureWebpack: {
