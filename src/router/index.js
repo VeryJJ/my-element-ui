@@ -98,86 +98,29 @@ export const constantRoutes = [
     ]
   },
 
-  // {
-  //   path: '/form',
-  //   component: Layout,
-  //   children: [
-  //     {
-  //       path: 'index',
-  //       name: 'Form',
-  //       component: () => import('@/views/form/index'),
-  //       meta: { title: 'Form', icon: 'form' }
-  //     }
-  //   ]
-  // },
-
-  // {
-  //   path: '/nested',
-  //   component: Layout,
-  //   redirect: '/nested/menu1',
-  //   name: 'Nested',
-  //   meta: {
-  //     title: 'Nested',
-  //     icon: 'nested'
-  //   },
-  //   children: [
-  //     {
-  //       path: 'menu1',
-  //       component: () => import('@/views/nested/menu1/index'), // Parent router-view
-  //       name: 'Menu1',
-  //       meta: { title: 'Menu1' },
-  //       children: [
-  //         {
-  //           path: 'menu1-1',
-  //           component: () => import('@/views/nested/menu1/menu1-1'),
-  //           name: 'Menu1-1',
-  //           meta: { title: 'Menu1-1' }
-  //         },
-  //         {
-  //           path: 'menu1-2',
-  //           component: () => import('@/views/nested/menu1/menu1-2'),
-  //           name: 'Menu1-2',
-  //           meta: { title: 'Menu1-2' },
-  //           children: [
-  //             {
-  //               path: 'menu1-2-1',
-  //               component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-  //               name: 'Menu1-2-1',
-  //               meta: { title: 'Menu1-2-1' }
-  //             },
-  //             {
-  //               path: 'menu1-2-2',
-  //               component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-  //               name: 'Menu1-2-2',
-  //               meta: { title: 'Menu1-2-2' }
-  //             }
-  //           ]
-  //         },
-  //         {
-  //           path: 'menu1-3',
-  //           component: () => import('@/views/nested/menu1/menu1-3'),
-  //           name: 'Menu1-3',
-  //           meta: { title: 'Menu1-3' }
-  //         }
-  //       ]
-  //     },
-  //     {
-  //       path: 'menu2',
-  //       component: () => import('@/views/nested/menu2/index'),
-  //       meta: { title: 'menu2' }
-  //     }
-  //   ]
-  // },
-
   {
-    path: '/share-team',
+    path: '/echarts',
     component: Layout,
+    name: 'echarts',
+    meta: { title: 'echarts', icon: 'example' },
     children: [
       {
-        path: 'index',
-        name: 'share-team',
-        component: () => import('@/views/share-team/index'),
-        meta: { title: '黄裳的页面', icon: 'form' }
+        path: 'echarts-chart',
+        name: 'echarts-chart',
+        component: () => import('@/views/echarts/index-chart'),
+        meta: { title: 'echarts-chart', icon: 'form' }
+      },
+      {
+        path: 'echarts-multi-radar',
+        name: 'echarts-multi-radar',
+        component: () => import('@/views/echarts/index-multi-radar'),
+        meta: { title: 'echarts-multi-radar', icon: 'form' }
+      },
+      {
+        path: 'echarts-pie-nest',
+        name: 'echarts-pie-nest',
+        component: () => import('@/views/echarts/index-pie-nest'),
+        meta: { title: 'echarts-pie-nest', icon: 'form' }
       }
     ]
   },

@@ -12,6 +12,8 @@ import App from './App'
 import store from './store'
 import router from './router'
 
+import echarts from 'echarts' //echarts
+
 import '@/icons' // icon
 import '@/permission' // permission control
 
@@ -34,6 +36,9 @@ Vue.use(ElementUI, { locale })
 // Vue.use(ElementUI)
 
 Vue.config.productionTip = false
+
+//引入echarts
+Vue.prototype.$echarts = echarts
 
 new Vue({
   el: '#app',
